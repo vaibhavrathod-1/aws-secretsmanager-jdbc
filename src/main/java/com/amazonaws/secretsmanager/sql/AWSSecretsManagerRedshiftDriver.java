@@ -110,7 +110,7 @@ public final class AWSSecretsManagerRedshiftDriver extends AWSSecretsManagerDriv
         if (e instanceof SQLException) {
             SQLException sqle = (SQLException) e;
             String sqlState = sqle.getSQLState();
-            return sqlState.equals(ACCESS_DENIED_FOR_USER_USING_PASSWORD_TO_DATABASE);
+            return ACCESS_DENIED_FOR_USER_USING_PASSWORD_TO_DATABASE.equals(sqlState);
         }
         return false;
     }
